@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--
+    include the angular js script file (required) 
+  -->
+  <script src="https://code.angularjs.org/1.4.8/angular.js" data-semver="1.4.8" data-require="angular.js@1.4.8"></script>
+</head>
+
+<body>
+  <!--
+   Angular watches and takes responsibility of the section where ng-app directive is included
+   Adding Angular markup to normal HTML is called a 'template' and the browser doesn't understand this template when it reads the code
+   Angular has a $compiler which compiles this template into simple browser-readable HTML code called 'view'
+  -->
+  <h1>Angular is watchful</h1>
+  <div ng-app>
+    <h1>I work here</h1>
+    <h2>{{ 2+5 }}</h2>
+  </div>
+  <!--
+   Angular doesn't compile and process code outside of the ng-app scope. It only watches for Angular expressions, directives, etc inside the scope
+   Writing an Angular expression outside the ng-app scope is just like writing any text content
+  -->
+  <div>
+    <h1>But I dont work here</h1>
+    <h2>{{ 2+5 }}</h2>
+    <p>..psstt..this was because I was out of the ng-app scope</p>
+  </div>
+</body>
+
+</html>
